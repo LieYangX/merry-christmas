@@ -1,0 +1,101 @@
+/*盒子*/
+.box{
+    width: 100%;
+    height: 100%;
+}
+/*画板*/
+.Drawing_board{
+    width: 100%;
+    height: 92%;
+    text-align: center;
+}
+/*工具板*/
+.tool{
+    width: 100%;
+    height: 8%;
+    padding: 20px;
+}
+.tool::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 90%;
+    z-index: -1;
+    background-image: url('./picture/test.png');
+    filter: blur(20px);
+}
+/*流光按钮*/
+.btn {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 60px;
+}
+
+.btn:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+/*贺卡*/
+.card{
+    display: none;
+    width: 600px;
+    height: 400px;
+    background-image: url('./picture/shengdanshu_guashi-005.jpg');
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+.content{
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+.xtool{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
